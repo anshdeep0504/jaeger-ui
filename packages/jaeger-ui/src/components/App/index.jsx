@@ -34,6 +34,7 @@ import TracePage from '../TracePage';
 import { ROUTE_PATH as tracePath } from '../TracePage/url';
 import MonitorATMPage from '../Monitor';
 import { ROUTE_PATH as monitorATMPath } from '../Monitor/url';
+import MicroservicesArchitectureView from '../MicroservicesArchitectureView';  // New import
 import JaegerAPI, { DEFAULT_API_ROOT } from '../../api/jaeger';
 import processScripts from '../../utils/config/process-scripts';
 import prefixUrl from '../../utils/prefix-url';
@@ -113,7 +114,8 @@ export default class JaegerUIApp extends Component {
                   <Route path={monitorATMPath}>
                     <MonitorATMPage />
                   </Route>
-
+                  <Route path="/microservices" component={MicroservicesArchitectureView} />  {/* New Route */}
+                  
                   <Route exact path="/">
                     <Redirect to={searchPath} />
                   </Route>
